@@ -9,14 +9,10 @@ app.post("/auth/live", (req,res)=>{
     const streamkey = req.body.key
 
     if (streamkey === "Bismillah") {
-        res.status(200).send({
-            message:"successfull"
-        })
+        res.status(200).send()
         return
     }
-    res.status(403).send({
-        message: "failed"
-    })
+    res.status(403).send()
     return
 })
 
