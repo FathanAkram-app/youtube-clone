@@ -4,10 +4,14 @@ services:
     build: ./rtmp
     ports:
       - "1935:1935"
-      - "8080:8080"
     container_name: rtmp_server
     volumes:
       - ./data:/tmp/hls
   auth:
     build: ./auth
     container_name: auth_server
+  client:
+    build: ./client
+    ports:
+      - "3006:3006"
+    container_name: client
